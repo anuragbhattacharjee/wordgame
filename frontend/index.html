@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Word Game</title>
+	<meta name="author" content="Anurag Bhattacharjee" />
+	
+	<style>
+		body, html{
+			margin:0;
+			padding:0;
+			height:100%;
+			background-color: #F5F5F8;
+			/* background-image: url(imgs/grain.png); */
+		}
+    .wrap-content {
+      width: 550px;
+      background: 0 0;
+      padding: 50px 0 160px;
+    }
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>	
+	<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+	
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.funnyText.js') }}"></script>
+  <script type="text/javascript">
+  </script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="wrap">
+    <div class="row">
+      <div class="col">
+        <input type="number" id="numChars" name="numChars" placeholder="5"/>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col chars">
+        <input />
+      </div>
+    </div>  
+    
+    <div class="row">
+      <div class="col">
+        <textarea/>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
