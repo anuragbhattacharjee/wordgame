@@ -1,7 +1,7 @@
 import os
 import pandas as pd 
 from flask import Flask, jsonify
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, request
 
 
 def get_data_file_path(relative_path):
@@ -58,7 +58,6 @@ def take_inputs():
     n = n+1
   
   # print("Chars: ", chars)
-
   data_file_path = get_data_file_path(r'words.txt')
   # read_dataframe(file_path)
   filter_character_indexes(data_file_path, chars)
@@ -72,9 +71,12 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
-class Welcome(Resource):
-    def get(self):
-        headers = {'Content-Type': 'text/html', 'Etag': 'some-opaque-string'}
-        return make_response(render_template('home.html'), 201, headers)
+class Wordgame(Resource):
+    def post(self):
+        json_data = request.get_json()
+        data_file_path = get_data_file_path(r'words.txt')
+        # read_dataframe(file_path)
+        words = filter_character_indexes(data_file_path, json_data["chars"])
+        return words
 
-api.add_resource(Welcome, '/', '/hello')
+api.add_resource(Wordgame, '/')
