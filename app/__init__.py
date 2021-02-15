@@ -2,7 +2,9 @@ import os
 import pandas as pd 
 from flask import Flask, jsonify
 from flask_restful import Resource, Api, request
+from flask_cors import CORS
 
+from app.invalid_usage  import InvalidUsage
 
 def get_data_file_path(relative_path):
     d = os.getcwd()
@@ -63,6 +65,7 @@ def take_inputs():
   filter_character_indexes(data_file_path, chars)
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 @app.errorhandler(InvalidUsage)
@@ -73,10 +76,11 @@ def handle_invalid_usage(error):
 
 class Wordgame(Resource):
     def post(self):
-        json_data = request.get_json()
-        data_file_path = get_data_file_path(r'words.txt')
-        # read_dataframe(file_path)
-        words = filter_character_indexes(data_file_path, json_data["chars"])
-        return words
+      print(request)
+      json_data = request.get_json()
+      data_file_path = get_data_file_path(r'words.txt')
+      # read_dataframe(file_path)
+      words = filter_character_indexes(data_file_path, json_data["chars"])
+      return words
 
-api.add_resource(Wordgame, '/')
+api.add_resource(Wordgame, '/wordgame')

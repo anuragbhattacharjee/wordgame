@@ -1,0 +1,53 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  /*height:100%;*/
+  background-color: #f5f5f8;
+  /* background-image: url(imgs/grain.png); */
+}
+.wrap-content {
+  /* width: 400px; */
+  background: 0 0;
+  margin: auto;
+  padding: 50px 0 160px;
+}
+
+input {
+  margin: 0 5px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 50px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 5px #ccc inset;
+  outline: none;
+  width: 20%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 3px;
+}
+
+#form input {
+  width: 40px;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+input:focus {
+  border-color: purple;
+  box-shadow: 0 0 5px purple inset;
+}
+
+input::selection {
+  background: transparent;
+}
+
+button {
+  border: solid 2px;
+  border-radius: 30px;
+  line-height: 19px;
+  font-size: 120%;
+  /* width: 22px; */
+  /* position: absolute; */
+  /* right: 5px; */
+  top: 5px;
+}

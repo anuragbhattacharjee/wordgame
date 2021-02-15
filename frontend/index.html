@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head lang="en">
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 	<title>Word Game</title>
 	<meta name="author" content="Anurag Bhattacharjee" />
-	
-	<style>
-		body, html{
-			margin:0;
-			padding:0;
-			height:100%;
-			background-color: #F5F5F8;
-			/* background-image: url(imgs/grain.png); */
-		}
-    .wrap-content {
-      width: 550px;
-      background: 0 0;
-      padding: 50px 0 160px;
-    }
 
-	</style>
-
-	<!--[if IE]>
-		<script type="text/javascript">
-			 var console = { log: function() {} };
-		</script>
-	<![endif]-->
-
-	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>	
-	<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
-	
-	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.funnyText.js') }}"></script>
-  <script type="text/javascript">
-  </script>
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/jquery.funnyText.css">
+  
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/title-text.css">
 </head>
-<body>
 
-<div class="container">
-  <div class="wrap">
-    <div class="row">
-      <div class="col">
-        <input type="number" id="numChars" name="numChars" placeholder="5"/>
+<body>
+  <div class="container title-text">
+    <div class="table">
+      <div class="tableCell">
+        <div class="text1"> WORD <span>GAME </span>  </div>
       </div>
     </div>
-  
-    <div class="row">
-      <div class="col chars">
-        <input />
+  </div>   
+  <div class="wrap-content">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <!-- <label for="numChars">Number of characters: </label> -->
+          <input type="number" id="numChars" name="numChars" min="1" max="20" placeholder="5" value="5"/>
+        </div>
       </div>
-    </div>  
-    
-    <div class="row">
-      <div class="col">
-        <textarea/>
+      <br/> 
+
+      <div class="row">
+        <!-- <label>Characters: </label> -->
+        <div class="col chars" id="form">
+          <!-- <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" /> -->
+        </div>
+      </div> 
+      <br/>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-primary btn-embossed" onclick="findWords()">Find</button>
+        </div>
+      </div>
+      <br/> 
+      <div class="row">
+        <div class="col words">
+          <div class="alert alert-primary" role="alert">
+            Anurag is awesome!!!
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.funnyText.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>	
+  <script type="text/javascript" src="js/title-text.js"></script>	
 </body>
 </html>
