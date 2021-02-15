@@ -1,6 +1,10 @@
 $(function () {
   "use strict";
 
+  $("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+  });
+
   var body = $("body");
   let charsSize = $("#numChars").val();
   let idx = 0;
@@ -18,11 +22,12 @@ $(function () {
 
     if (totalChars > lastindex) {
       $("#form input:last").after(
-        `<input type="text" id="char_${lastindex + 1}" maxLength="1" size="1"/>`
+        `<input type="text" id="char_${
+          lastindex + 1
+        }" maxLength="1" size="1" placeholder="*"/>`
       );
     } else {
       $(`#char_${lastindex}`).remove();
-      lastindex--;
     }
   });
 

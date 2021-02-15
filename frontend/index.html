@@ -24,9 +24,16 @@
   <div class="wrap-content">
     <div class="container">
       <div class="row">
+        <ul>
+            <li>Increase/decrease number to adjust your word's character size</li>
+            <li>Type the charachters you know in place and leave other places black or put *</li>
+            <li>Example: char count: 5, chars: m***e</li>
+        </ul>
+    </div>
+      <div class="row">
         <div class="col">
           <!-- <label for="numChars">Number of characters: </label> -->
-          <input type="number" id="numChars" name="numChars" min="1" max="20" placeholder="5" value="5"/>
+          <input type="number" id="numChars" name="numChars" min="1" max="20" placeholder="5" value="5" onKeyDown="return false"/>
         </div>
       </div>
       <br/> 
